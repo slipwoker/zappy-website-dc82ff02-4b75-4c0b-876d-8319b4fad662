@@ -5404,6 +5404,231 @@ body.accessibility-widget-visible ._access-menu {
     display: none !important;
   }
 }
+
+/* Cloned section from URL */
+/* ===== GOETA HERO / LOADING SECTION ===== */
+.goeta-hero-section {
+  background: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  direction: rtl;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture */
+.goeta-hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(31, 53, 88, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(31, 53, 88, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.goeta-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== SPINNER ===== */
+.goeta-spinner-wrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goeta-spinner {
+  width: 64px;
+  height: 64px;
+  animation: goeta-spin 1.8s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goeta-spinner-svg {
+  width: 64px;
+  height: 64px;
+}
+
+@keyframes goeta-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== SCALES LOGO BADGE ===== */
+.goeta-logo-badge {
+  width: 90px;
+  height: 90px;
+  background: var(--gradient-primary, linear-gradient(180deg, #2E5277 0%, #25476A 100%));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 8px 32px rgba(31, 53, 88, 0.25),
+    0 2px 8px rgba(31, 53, 88, 0.15);
+  animation: goeta-pulse 2.5s ease-in-out infinite;
+}
+
+.goeta-scales-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goeta-scales-svg {
+  width: 52px;
+  height: 52px;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes goeta-pulse {
+  0%, 100% {
+    box-shadow:
+      0 8px 32px rgba(31, 53, 88, 0.25),
+      0 2px 8px rgba(31, 53, 88, 0.15);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 12px 40px rgba(31, 53, 88, 0.35),
+      0 4px 12px rgba(31, 53, 88, 0.2);
+    transform: scale(1.04);
+  }
+}
+
+/* ===== FIRM NAME ===== */
+.goeta-firm-name {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--primary, #1F3558);
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* ===== TAGLINE ===== */
+.goeta-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #4a6080;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* ===== LOADING BAR ===== */
+.goeta-loading-bar {
+  width: 220px;
+  height: 4px;
+  background: rgba(31, 53, 88, 0.12);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.goeta-loading-fill {
+  height: 100%;
+  width: 40%;
+  background: var(--gradient-primary, linear-gradient(180deg, #2E5277 0%, #25476A 100%));
+  border-radius: 100px;
+  animation: goeta-slide 1.6s ease-in-out infinite;
+}
+
+@keyframes goeta-slide {
+  0%   { transform: translateX(300%); }
+  50%  { transform: translateX(0%); }
+  100% { transform: translateX(-300%); }
+}
+
+/* ===== STATUS TEXT ===== */
+.goeta-status-text {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: var(--primary, #1F3558);
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  opacity: 0.8;
+  animation: goeta-blink 2s ease-in-out infinite;
+}
+
+@keyframes goeta-blink {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 0.5; }
+}
+
+/* ===== SERVICE CHIPS ===== */
+.goeta-services-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.goeta-service-chip {
+  background: rgba(31, 53, 88, 0.07);
+  color: var(--primary, #1F3558);
+  border: 1px solid rgba(31, 53, 88, 0.2);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.goeta-service-chip:hover {
+  background: rgba(31, 53, 88, 0.14);
+  border-color: rgba(31, 53, 88, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .goeta-hero-inner {
+    gap: 18px;
+  }
+
+  .goeta-logo-badge {
+    width: 76px;
+    height: 76px;
+  }
+
+  .goeta-scales-svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .goeta-loading-bar {
+    width: 160px;
+  }
+
+  .goeta-service-chip {
+    font-size: 0.82rem;
+    padding: 5px 14px;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
